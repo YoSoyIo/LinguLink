@@ -20,7 +20,7 @@ logoImg.classList.add("logo-img");
 navLinks.classList.add("nav-links");
 
 // Añadir texto y atributos de imagen
-logo.textContent = "Mi sitio web";
+//logo.textContent = "Mi sitio web";
 logoImg.src = rutaIMG + "logo1.png";
 logoImg.alt = "Logo del sitio web";
 

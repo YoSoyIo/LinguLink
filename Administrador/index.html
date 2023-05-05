@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/diseno.css">
         <link rel="stylesheet" href="../Todos/CSS/diseno_nav.css">
-        <link rel="stylesheet" href="../Todos/CSS/fuentes.css">
+        <link rel="stylesheet" href="../Todos/CSS/general.css">
         <title>LinguaLink: Administrador</title>
     </head>
     <body>
@@ -12,8 +12,37 @@
             <div id="div_navbar"></div>
         </header>
         <main>
-            <section >
-
+            <section id="titulo" class="section-titulo-1">
+                <h1 class="h1-titulo-1">Creación y edición de contenido</h1>
+            </section>
+            <section id="Contenido" class="cont-1">
+                <div id="menu-cont-crud">
+                    <ul class="ul-menu">
+                        <li class="li-opc seleccionado">Crear</li>
+                        <li class="li-opc">Borrar</li>
+                        <li class="li-opc">Modificar</li>
+                        <li class="li-opc">Desplegar</li>
+                    </ul>
+                </div>
+                <div id="contenedor-crud">
+                  <div id="cont-alta" class="cont-div mostrar">
+                    <h2 class="h2-titulo-cont-1">Crear nuevo contenido</h2>
+                    <p>Este es el contenido 1.</p>
+                  </div>
+                  <div id="cont-baja" class="cont-div ocultar">
+                    <h2 class="h2-titulo-cont-1">Borrar</h2>
+                    <p>Este es el contenido 2.</p>
+                  </div>
+                  <div id="cont-modi" class="cont-div ocultar">
+                    <h2 class="h2-titulo-cont-1">Modificar contenido existente</h2>
+                    <p>Este es el contenido 3.</p>
+                  </div>
+                  <div id="cont-edit" class="cont-div ocultar">
+                    <h2 class="h2-titulo-cont-1">Mostrar contenido u ocultar</h2>
+                    <p>Este es el contenido 4.</p>
+                  </div>
+                  <button id="boton" onclick="cambiarContenido()">Cambiar contenido</button>
+                </div>
             </section>
         </main>
         <div class="">

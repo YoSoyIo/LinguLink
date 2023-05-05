@@ -1,0 +1,56 @@
+/*Paleta de colores*/
+:root {
+  --color-1: #0799B6;
+  --color-2: #4A6EB0;
+  --color-3: #114C5F;
+  --color-4: #9CD2D3;
+  --color-5: #F2E6CF;
+}
+
+/*Toda la ventana*/
+
+body{
+    background: var(--color-1);
+}
+
+/*Sección de diseño de el menú de despliegue de contenido*/
+.ul-menu{
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.li-opc{
+    background: var(--color-3);
+    color: var(--color-5);
+    width: 25%;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.cont-div{
+    background: var(--color-5);
+    width: 98.5vw;
+    height: 80vh;
+}
+
+.h2-titulo-cont-1{
+    margin: 0px;
+}
+
+.seleccionado{
+    background: var(--color-5);
+    color: var(--color-3);
+}
+
+.mostrar{
+    display: block;
+}
+
+.ocultar{
+    display: none;
+}
