@@ -18,19 +18,38 @@
             <section id="Contenido" class="cont-1">
                 <div id="menu-cont-crud">
                     <ul class="ul-menu">
-                        <li class="li-opc seleccionado">Crear</li>
-                        <li class="li-opc">Borrar</li>
-                        <li class="li-opc">Modificar</li>
-                        <li class="li-opc">Desplegar</li>
+                        <li class="li-opc seleccionado" id="opc-1">Crear</li>
+                        <li class="li-opc" id="opc-2">Borrar</li>
+                        <li class="li-opc" id="opc-3">Modificar</li>
+                        <li class="li-opc" id="opc-4">Desplegar</li>
                     </ul>
                 </div>
                 <div id="contenedor-crud">
                   <div id="cont-alta" class="cont-div mostrar">
                     <h2 class="h2-titulo-cont-1">Crear nuevo contenido</h2>
-                    <p>Este es el contenido 1.</p>
+                    <p class="separador_pasos_p">Paso 1</p>
+                    <hr class="separador_pasos_hr">
+                    <div class="paso_1">
+                        <div class="paso_1_descripcion">
+                            <label for="titulo" class="etiqueta">Nombre o título de la actividad:</label>
+                            <input type="text" id="titulo" name="titulo" class="texto">
+                            <label for="tipo" class="etiqueta">Tipo de actividad:</label>
+                            <select class="opc_selector" id="tipo" name="tipo"></select>
+                            <label for="nivel" class="etiqueta">Nivel de la actividad:</label>
+                            <select class="opc_selector" id="nivel" name="nivel"></select>
+                        </div>
+                        <div class="paso_1_imagen">
+                            <img src="" alt="Imagen de descripcion de la actividad">
+                        </div>
+                    </div>
+                    <p class="separador_pasos_p">Paso 2</p>
+                    <hr class="separador_pasos_hr">
+                    <div class="paso_1">
+
+                    </div>
                   </div>
                   <div id="cont-baja" class="cont-div ocultar">
-                    <h2 class="h2-titulo-cont-1">Borrar</h2>
+                    <h2 class="h2-titulo-cont-1">Borrar contenido</h2>
                     <p>Este es el contenido 2.</p>
                   </div>
                   <div id="cont-modi" class="cont-div ocultar">
@@ -41,7 +60,6 @@
                     <h2 class="h2-titulo-cont-1">Mostrar contenido u ocultar</h2>
                     <p>Este es el contenido 4.</p>
                   </div>
-                  <button id="boton" onclick="cambiarContenido()">Cambiar contenido</button>
                 </div>
             </section>
         </main>
