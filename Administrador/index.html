@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="css/diseno.css">
         <link rel="stylesheet" href="../Todos/CSS/diseno_nav.css">
         <link rel="stylesheet" href="../Todos/CSS/general.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>LinguaLink: Administrador</title>
     </head>
     <body>
@@ -29,14 +30,15 @@
                     <h2 class="h2-titulo-cont-1">Crear nuevo contenido</h2>
                     <p class="separador_pasos_p">Paso 1</p>
                     <hr class="separador_pasos_hr">
-                    <div class="paso_1">
+                    <div class="paso">
                         <div class="paso_1_descripcion">
                             <label for="titulo" class="etiqueta">Nombre o título de la actividad:</label>
-                            <input type="text" id="titulo" name="titulo" class="texto">
+                            <input type="text" id="titulo" name="titulo" class="texto" placeholder="Ingresa el nombre de la actividad...">
                             <label for="tipo" class="etiqueta">Tipo de actividad:</label>
                             <select class="opc_selector" id="tipo" name="tipo"></select>
                             <label for="nivel" class="etiqueta">Nivel de la actividad:</label>
                             <select class="opc_selector" id="nivel" name="nivel"></select>
+                            <button type="button" name="siguiente" class="bnt-aceptar">Siguiente</button>
                         </div>
                         <div class="paso_1_imagen">
                             <img src="" alt="Imagen de descripcion de la actividad">
@@ -44,8 +46,32 @@
                     </div>
                     <p class="separador_pasos_p">Paso 2</p>
                     <hr class="separador_pasos_hr">
-                    <div class="paso_1">
+                    <div class="paso">
+                        <div class="paso_2_descripcion">
+                            <label for="titulo" class="etiqueta">Ingresa las instrucciones:</label>
+                            <textarea id="txa-instruccion" name="txa-instruccion" rows="8" cols="80" placeholder="Ingresa las instrucciones de la actividad..."></textarea>
+                            <div class="div-pregunta">
+                                <p>Escribe la pregunta</p>
+                                <label for="pregunta" class="etiqueta">Pregunta:</label>
+                                <input type="text" id="ipt-pregunta" name="ipt-pregunta" class="texto" placeholder="Ingresa la pregunta...">
+                                <p>Escribe las respuestas de la pregunta y marca la que sea correcta</p>
+                                <input type="radio" name="pregunta-" value="">
+                                <input type="text" name="respuesta-" value="">
+                                <input type="radio" name="pregunta-" value="">
+                                <input type="text" name="respuesta-" value="">
+                                <input type="radio" name="pregunta-" value="">
+                                <input type="text" name="respuesta-" value="">
+                                <input type="radio" name="pregunta-" value="">
+                                <input type="text" name="respuesta-" value="">
 
+                            </div>
+                            <div class="agregar">
+                                <button type="button" name="btn-agregar">
+                                    <i class="fa fa-plus-circle" style="font-size:60px;color:red;"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
                     </div>
                   </div>
                   <div id="cont-baja" class="cont-div ocultar">
