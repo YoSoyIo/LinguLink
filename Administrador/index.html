@@ -30,15 +30,26 @@
                     <h2 class="h2-titulo-cont-1">Crear nuevo contenido</h2>
                     <p class="separador_pasos_p">Paso 1</p>
                     <hr class="separador_pasos_hr">
-                    <div class="paso">
+                    <div class="paso" id="paso_1">
                         <div class="paso_1_descripcion">
                             <label for="titulo" class="etiqueta">Nombre o título de la actividad:</label>
                             <input type="text" id="titulo" name="titulo" class="texto" placeholder="Ingresa el nombre de la actividad...">
                             <label for="tipo" class="etiqueta">Tipo de actividad:</label>
-                            <select class="opc_selector" id="tipo" name="tipo"></select>
+                            <select class="opc_selector" id="tipo" name="tipo">
+                                <option value="1">Cuestionario</option>
+                                <option value="2">Opción múltiple</option>
+                                <option value="3">Relación de columnas</option>
+                            </select>
                             <label for="nivel" class="etiqueta">Nivel de la actividad:</label>
-                            <select class="opc_selector" id="nivel" name="nivel"></select>
-                            <button type="button" name="siguiente" class="bnt-aceptar">Siguiente</button>
+                            <select class="opc_selector" id="nivel" name="nivel">
+                                <option value="1">A1</option>
+                                <option value="2">A2</option>
+                                <option value="3">B1</option>
+                                <option value="4">B2</option>
+                                <option value="5">C1</option>
+                                <option value="6">C2</option>
+                            </select>
+                            <button type="button" name="siguiente" class="bnt-aceptar" onclick="agregar();">Siguiente</button>
                         </div>
                         <div class="paso_1_imagen">
                             <img src="" alt="Imagen de descripcion de la actividad">
@@ -46,45 +57,45 @@
                     </div>
                     <p class="separador_pasos_p">Paso 2</p>
                     <hr class="separador_pasos_hr">
-                    <div class="paso">
-                        <div class="paso_2_descripcion">
+                    <div class="paso" id="paso_2">
+                        <div class="paso_2_creacion">
                             <label for="titulo" class="etiqueta">Ingresa las instrucciones:</label>
                             <textarea id="txa-instruccion" name="txa-instruccion" rows="8" cols="80" placeholder="Ingresa las instrucciones de la actividad..."></textarea>
-                            <div class="div-pregunta">
-                                <p>Escribe la pregunta</p>
-                                <label for="pregunta" class="etiqueta">Pregunta:</label>
-                                <input type="text" id="ipt-pregunta" name="ipt-pregunta" class="texto" placeholder="Ingresa la pregunta...">
-                                <p>Escribe las respuestas de la pregunta y marca la que sea correcta</p>
-                                <input type="radio" name="pregunta-" value="">
-                                <input type="text" name="respuesta-" value="">
-                                <input type="radio" name="pregunta-" value="">
-                                <input type="text" name="respuesta-" value="">
-                                <input type="radio" name="pregunta-" value="">
-                                <input type="text" name="respuesta-" value="">
-                                <input type="radio" name="pregunta-" value="">
-                                <input type="text" name="respuesta-" value="">
+                            <div id="contenedorReactivos" class="div-pregunta">
 
                             </div>
                             <div class="agregar">
-                                <button type="button" name="btn-agregar">
+                                <button type="button" name="btn-agregar" onclick="agregar();">
                                     <i class="fa fa-plus-circle" style="font-size:60px;color:red;"></i>
                                     Agregar
                                 </button>
                             </div>
                         </div>
+                        <div class="finalizar">
+                            <button type="button" name="terminar" onclick="crear();">Crear</button>
+                        </div>
                     </div>
                   </div>
                   <div id="cont-baja" class="cont-div ocultar">
-                    <h2 class="h2-titulo-cont-1">Borrar contenido</h2>
-                    <p>Este es el contenido 2.</p>
+                    <h2 class="h2-titulo-cont-2">Borrar contenido</h2>
+                    <div class="div-busqueda" id="busqueda-cont">
+                        <label for="titulo-bus-1" class="etiqueta">Nombre o título de la actividad:</label>
+                        <input type="text" id="titulo-bus-1" name="titulo-bus-1" class="texto" placeholder="Ingresa el nombre de la actividad...">
+                    </div>
                   </div>
                   <div id="cont-modi" class="cont-div ocultar">
-                    <h2 class="h2-titulo-cont-1">Modificar contenido existente</h2>
-                    <p>Este es el contenido 3.</p>
+                    <h2 class="h2-titulo-cont-3">Modificar contenido existente</h2>
+                    <div class="div-busqueda" id="busqueda-cont">
+                        <label for="titulo-bus-2" class="etiqueta">Nombre o título de la actividad:</label>
+                        <input type="text" id="titulo-bus-2" name="titulo-bus-2" class="texto" placeholder="Ingresa el nombre de la actividad...">
+                    </div>
                   </div>
                   <div id="cont-edit" class="cont-div ocultar">
-                    <h2 class="h2-titulo-cont-1">Mostrar contenido u ocultar</h2>
-                    <p>Este es el contenido 4.</p>
+                    <h2 class="h2-titulo-cont-3">Mostrar contenido u ocultar</h2>
+                    <div class="div-busqueda" id="busqueda-cont">
+                        <label for="titulo-bus-3" class="etiqueta">Nombre o título de la actividad:</label>
+                        <input type="text" id="titulo-bus-3" name="titulo-bus-3" class="texto" placeholder="Ingresa el nombre de la actividad...">
+                    </div>
                   </div>
                 </div>
             </section>
