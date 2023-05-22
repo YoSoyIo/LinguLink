@@ -58,3 +58,4 @@
       resultadoDiv.innerHTML = "Respuestas correctas: " + respuestasCorrectas + "/" + totalPreguntas + "<br>Calificación: " + calificacion + "%";
       resultadoDiv.style.display = "block";
     }
+	
