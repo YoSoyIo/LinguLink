@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ordenar Oración</title>
+  <style>
+    #sentence-container {
+      margin-bottom: 20px;
+    }
+    .word-button {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
 
-    </body>
+  <h1>Ordenar Oración</h1>
+
+  <div id="sentence-container">
+    <p>Oración: <span id="sentence"></span></p>
+  </div>
+
+  <div id="buttons-container">
+    <button class="word-button">Palabra 1</button>
+    <button class="word-button">Palabra 2</button>
+    <button class="word-button">Palabra 3</button>
+    <button class="word-button">Palabra 4</button>
+    <button class="word-button">Palabra 5</button>
+    <button class="word-button">Palabra 6</button>
+  </div>
+
+  <script>
+    // Array de palabras de la oración original
+    var words = ["Esta", "es", "una", "oración", "desordenada"];
+
+    // Obtener elementos del DOM
+    var sentenceContainer = document.getElementById("sentence");
+    var buttonsContainer = document.getElementById("buttons-container");
+
+    // Mostrar la oración original
+    sentenceContainer.textContent = words.join(" ");
+
+    // Crear botones para cada palabra
+    words.forEach(function(word) {
+      var button = document.createElement("button");
+      button.className = "word-button";
+      button.textContent = word;
+      button.addEventListener("click", function() {
+        // Agregar la palabra al final de la oración
+        sentenceContainer.textContent += " " + word;
+        // Ocultar el botón
+        button.style.display = "none";
+      });
+      buttonsContainer.appendChild(button);
+    });
+  </script>
+
+</body>
 </html>
