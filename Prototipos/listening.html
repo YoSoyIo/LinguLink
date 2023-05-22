@@ -28,41 +28,6 @@
       text-align: center;
     }
   </style>
-  <script>
-    function revisarRespuestas() {
-      var preguntas = document.getElementsByClassName("question");
-      var totalPreguntas = preguntas.length;
-      var respuestasCorrectas = 0;
-
-      for (var i = 0; i < totalPreguntas; i++) {
-        var pregunta = preguntas[i];
-        var opciones = pregunta.getElementsByTagName("input");
-        var totalOpciones = opciones.length;
-        var respuestaCorrecta = false;
-
-        for (var j = 0; j < totalOpciones; j++) {
-          var opcion = opciones[j];
-
-          if (opcion.checked && opcion.value === "correcta") {
-            respuestaCorrecta = true;
-            break;
-          }
-        }
-
-        if (respuestaCorrecta) {
-          respuestasCorrectas++;
-          pregunta.style.backgroundColor = "green";
-        } else {
-          pregunta.style.backgroundColor = "red";
-        }
-      }
-
-      var calificacion = (respuestasCorrectas / totalPreguntas) * 100;
-      var resultadoDiv = document.getElementById("result");
-      resultadoDiv.innerHTML = "Respuestas correctas: " + respuestasCorrectas + "/" + totalPreguntas + "<br>Calificación: " + calificacion + "%";
-      resultadoDiv.style.display = "block";
-    }
-  </script>
 </head>
 <body>
   <div class="container">
@@ -153,5 +118,6 @@
     </div>
   </div>
   <div id="result"></div>
+  <script type="text/javascript" src="JS/scripts3.js"></script>
 </body>
 </html>
