@@ -1,6 +1,6 @@
     function checkAnswers() {
       var inputs = document.getElementsByTagName('input');
-      var correctAnswers = ["ingles", "chela", "gano", "rellena", "edad", "consumo", "pasear", "sonido", "visto", "preservación"];
+      var correctAnswers = ["beautiful", "parking", "collection", "friendship", "understandeable", "possibility", "refusal", "decoration", "sensitive", "arrival"];
       var correctCount = 0;
 	  var totalInputs = inputs.length;
 
