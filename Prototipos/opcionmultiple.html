@@ -1,10 +1,207 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
+<html>
 
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <title>Actividad de Opción Múltiple - Present Continuous</title>
+    <style>
+        .options label {
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        #result-container {
+            display: none;
+            margin-top: 20px;
+            width: 500px;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px;
+            background-color: blueviolet;
+            color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Actividad de Opción Múltiple - Present Continuous</h1>
+
+    <form id="quiz-form">
+        <div class="question">
+            <p>Choose the correct form of the verb in the present continuous tense:</p>
+            <p>1. I ____ in a bank.</p>
+            <ul class="options">
+                <li><label><input type="radio" name="question1" value="works"> works</label></li>
+                <li><label><input type="radio" name="question1" value="working"> working</label></li>
+                <li><label><input type="radio" name="question1" value="work"> work</label></li>
+                <li><label><input type="radio" name="question1" value="is working"> is working</label></li>
+            </ul>
+            <br>
+
+            <p>2. Barbara ____ everyday.</p>
+            <ul class="options">
+                <li><label><input type="radio" name="question2" value="run"> run</label></li>
+                <li><label><input type="radio" name="question2" value="runs"> running</label></li>
+                <li><label><input type="radio" name="question2" value="is running"> is running</label></li>
+                <li><label><input type="radio" name="question2" value="running"> runs</label></li>
+            </ul>
+            <br>
+
+            <p>3. He ____ in Canada.</p>
+            <ul class="options">
+                <li><label><input type="radio" name="question3" value="doesnt live"> doesn't live</label></li>
+                <li><label><input type="radio" name="question3" value="don't live"> don't live</label></li>
+                <li><label><input type="radio" name="question3" value="not live"> not live</label></li>
+                <li><label><input type="radio" name="question3" value="not lives"> not lives</label></li>
+            </ul>
+            <br>
+
+            <p>4. We ____ English.</p>
+            <ul class="options">
+                <li><label><input type="radio" name="question4" value="studys"> studys</label></li>
+                <li><label><input type="radio" name="question4" value="are studying"> are studying</label></li>
+                <li><label><input type="radio" name="question4" value="studies"> studies</label></li>
+                <li><label><input type="radio" name="question4" value="is studying"> is studying</label></li>
+            </ul>
+            <br>
+
+            <p>5. What are you doing right now? I ____ my homework.</p>
+            <ul class="options">
+                <li><label><input type="radio" name="question5" value="am doing"> am doing</label></li>
+                <li><label><input type="radio" name="question5" value="id doing"> id doing</label></li>
+                <li><label><input type="radio" name="question5" value="are doing"> are doing</label></li>
+                <li><label><input type="radio" name="question5" value="do"> do</label></li>
+            </ul>
+            <br>
+
+            <p>6. We ____ to the cinema next weekend.</p>
+            <ul class="options">
+                <li><label><input type="radio" name="question6" value="go"> go</label></li>
+                <li><label><input type="radio" name="question6" value="goes"> goes</label></li>
+                <li><label><input type="radio" name="question6" value="are going"> are going</label></li>
+                <li><label><input type="radio" name="question6" value="is going"> is going</label></li>
+            </ul>
+            <br>
+
+            <p>7. He ____ next week.</p>
+            <ul class="options">
+                <li><label><input type="radio" name="question7" value="not is working"> not is working</label></li>
+                <li><label><input type="radio" name="question7" value="isnt working"> isn´t working</label></li>
+                <li><label><input type="radio" name="question7" value="not works"> not works</label></li>
+                <li><label><input type="radio" name="question7" value="is working not"> is working not</label></li>
+            </ul>
+            <br>
+
+            <p>8. _____ the train _____ at 8:00?</p>
+            <ul class="options">
+                <li><label><input type="radio" name="question8" value="Does, leave"> Does, leave</label></li>
+                <li><label><input type="radio" name="question8" value="Do, leaves"> Do, leaves</label></li>
+                <li><label><input type="radio" name="question8" value="Does, leaves"> Does, leaves</label></li>
+                <li><label><input type="radio" name="question8" value="Do, leave"> Do, leave</label></li>
+            </ul>
+            <br>
+
+            <p>9. ____ to the party tonight?</p>
+            <ul class="options">
+                <li><label><input type="radio" name="question9" value="You are going"> You are going</label></li>
+                <li><label><input type="radio" name="question9" value="Is you going"> Is you going</label></li>
+                <li><label><input type="radio" name="question9" value="You go"> You go</label></li>
+                <li><label><input type="radio" name="question9" value="Are you going"> Are you going</label></li>
+            </ul>
+            <br>
+
+            <p>10. Michael ____ a new car.</p>
+            <ul class="options">
+                <li><label><input type="radio" name="question10" value="want"> want</label></li>
+                <li><label><input type="radio" name="question10" value="is wanting"> is wanting</label></li>
+                <li><label><input type="radio" name="question10" value="are wanting"> are wanting</label></li>
+                <li><label><input type="radio" name="question10" value="wants"> wants</label></li>
+            </ul>
+            <br>
+        </div>
+
+        <!-- Add more questions and options here -->
+
+        <button id="submit-button" type="submit" class="btn btn-primary" onclick="submitAnswers()">Submit Answers</button>
+
+        <div id="result-container"></div>
+    </form>
+
+    <script>
+        function submitAnswers() {
+            document.getElementById('quiz-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Evitar que el formulario se envíe
+
+                // Preguntas y respuestas correctas
+                const correctAnswers = {
+                    question1: 'working',
+                    question2: 'runs',
+                    question3: 'doesnt live',
+                    question4: 'are studying',
+                    question5: 'am doing',
+                    question6: 'are going',
+                    question7: 'isnt working',
+                    question8: 'Does, leave',
+                    question9: 'Are you going',
+                    question10: 'wants'
+                };
+
+                let score = 0;
+
+                // Obtener las respuestas seleccionadas por el usuario
+                const form = document.getElementById('quiz-form');
+                for (let i = 1; i <= 10; i++) {
+                    const questionName = 'question' + i;
+                    const selectedOption = form.elements[questionName].value;
+
+                    // Verificar si la respuesta es correcta
+                    if (selectedOption === correctAnswers[questionName]) {
+                        const options = form.elements[questionName];
+                        for (let j = 0; j < options.length; j++) {
+                            const option = options[j];
+                            if (option.value === selectedOption) {
+                                option.parentElement.style.backgroundColor = 'green';  // Marcar la respuesta seleccionada en verde
+                                option.parentElement.style.color = 'white';
+                                option.parentElement.style.border = 'none';
+                            }
+                        }
+                        score++;
+                    } else {
+                        const options = form.elements[questionName];
+                        for (let j = 0; j < options.length; j++) {
+                            const option = options[j];
+                            if (option.value === correctAnswers[questionName]) {
+                                option.parentElement.style.backgroundColor = 'green';  // Marcar la respuesta correcta en verde
+                                option.parentElement.style.color = 'white';
+                                option.parentElement.style.border = 'none';
+                            } else if (option.checked) {
+                                option.parentElement.style.backgroundColor = 'red';  // Marcar la respuesta seleccionada incorrecta en rojo
+                                option.parentElement.style.color = 'white';
+                                option.parentElement.style.border = 'none';
+                            }
+                        }
+                    }
+                }
+
+                var resultContainer = document.getElementById('result-container');
+                resultContainer.style.display = 'block';
+                resultContainer.textContent = 'Your score is ' + score + ' out of 10';
+                resultContainer.style.backgroundColor = 'blueviolet';
+
+                // Deshabilitar el botón "Submit Answers"
+                document.getElementById('submit-button').disabled = true;
+            });
+        }
+
+
+    </script>
+</body>
+
 </html>
