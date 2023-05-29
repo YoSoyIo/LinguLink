@@ -1,10 +1,117 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
+<html>
+<head>
+  <title>Actividad de Relacionar Columnas</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-    </body>
+    .column {
+      width: 300px;
+      height: 300px;
+      background-color: #f2f2f2;
+      margin: 10px;
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+    }
+
+    .item {
+      background-color: #fff;
+      padding: 10px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .line {
+      position: absolute;
+      width: 2px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="column">
+      <h3>Personajes</h3>
+      <div class="item" draggable="true" data-name="Goku">Goku</div>
+      <div class="item" draggable="true" data-name="Naruto">Naruto</div>
+      <div class="item" draggable="true" data-name="Luffy">Luffy</div>
+    </div>
+    <div class="column">
+      <h3>Series</h3>
+      <div class="item" draggable="true" data-name="Dragon Ball">Dragon Ball</div>
+      <div class="item" draggable="true" data-name="Naruto">Naruto</div>
+      <div class="item" draggable="true" data-name="One Piece">One Piece</div>
+    </div>
+    <svg id="lines-container"></svg>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.item');
+    const linesContainer = document.getElementById('lines-container');
+    let startPoint = null;
+
+    function handleDragStart(event) {
+      event.dataTransfer.setData('text/plain', this.dataset.name);
+      startPoint = getCenterPoint(this);
+    }
+
+    function handleDragOver(event) {
+      event.preventDefault();
+    }
+
+    function handleDrop(event) {
+      event.preventDefault();
+      const targetName = event.dataTransfer.getData('text/plain');
+
+      if (targetName) {
+        const endPoint = getCenterPoint(this);
+        drawLine(startPoint, endPoint);
+      }
+    }
+
+    function getCenterPoint(element) {
+      const rect = element.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+      return { x, y };
+    }
+
+    function drawLine(startPoint, endPoint) {
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute('x1', startPoint.x);
+      line.setAttribute('y1', startPoint.y);
+      line.setAttribute('x2', endPoint.x);
+      line.setAttribute('y2', endPoint.y);
+      line.setAttribute('stroke', '#000');
+      line.setAttribute('stroke-dasharray', '5 5');
+      line.classList.add('line');
+
+      linesContainer.appendChild(line);
+    }
+
+    items.forEach(item => {
+      item.addEventListener('dragstart', handleDragStart);
+    });
+
+    const columns = document.querySelectorAll('.column');
+    columns.forEach(column => {
+      column.addEventListener('dragover', handleDragOver);
+      column.addEventListener('drop', handleDrop);
+    });
+  </script>
+</body>
 </html>
