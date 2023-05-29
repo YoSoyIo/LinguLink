@@ -18,6 +18,7 @@
 	var resultContainer = document.getElementById('result-container');
     resultContainer.style.display = 'block';
 
+
     var calificacion = (correctCount / totalInputs) * 100;
 
     var resultText = 'Correct answers: ' + correctCount + '/' + totalInputs + '<br>Score: ' + calificacion + '%';
