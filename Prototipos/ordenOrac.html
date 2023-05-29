@@ -9,6 +9,10 @@
     }
     .word-button {
       margin-right: 5px;
+      cursor: pointer;
+    }
+    .dragged {
+      opacity: 0.5;
     }
   </style>
 </head>
@@ -21,38 +25,114 @@
   </div>
 
   <div id="buttons-container">
-    <button class="word-button">Palabra 1</button>
-    <button class="word-button">Palabra 2</button>
-    <button class="word-button">Palabra 3</button>
-    <button class="word-button">Palabra 4</button>
-    <button class="word-button">Palabra 5</button>
-    <button class="word-button">Palabra 6</button>
+    <button class="word-button" draggable="true">Esta</button>
+    <button class="word-button" draggable="true">es</button>
+    <button class="word-button" draggable="true">una</button>
+    <button class="word-button" draggable="true">oración</button>
+    <button class="word-button" draggable="true">desordenada</button>
   </div>
+
+  <button id="calificar-button">Calificar</button>
+  <button id="reset-button">Reset</button>
 
   <script>
     // Array de palabras de la oración original
     var words = ["Esta", "es", "una", "oración", "desordenada"];
+    var shuffledWords = shuffleArray(words);
 
     // Obtener elementos del DOM
     var sentenceContainer = document.getElementById("sentence");
     var buttonsContainer = document.getElementById("buttons-container");
+    var calificarButton = document.getElementById("calificar-button");
+    var resetButton = document.getElementById("reset-button");
 
-    // Mostrar la oración original
-    sentenceContainer.textContent = words.join(" ");
+    // Variable para guardar el estado inicial
+    var initialState;
+
+    // Mostrar la oración en desorden
+    sentenceContainer.textContent = shuffledWords.join(" / ");
 
     // Crear botones para cada palabra
-    words.forEach(function(word) {
+    shuffledWords.forEach(function(word) {
       var button = document.createElement("button");
       button.className = "word-button";
       button.textContent = word;
-      button.addEventListener("click", function() {
-        // Agregar la palabra al final de la oración
-        sentenceContainer.textContent += " " + word;
-        // Ocultar el botón
-        button.style.display = "none";
+      button.draggable = true;
+      button.addEventListener("dragstart", function(event) {
+        event.dataTransfer.setData("text/plain", word);
+        button.classList.add("dragged");
+      });
+      button.addEventListener("dragend", function(event) {
+        button.classList.remove("dragged");
       });
       buttonsContainer.appendChild(button);
     });
+
+    // Permitir soltar elementos en la oración
+    sentenceContainer.addEventListener("dragover", function(event) {
+      event.preventDefault();
+    });
+
+    sentenceContainer.addEventListener("drop", function(event) {
+      event.preventDefault();
+      var word = event.dataTransfer.getData("text/plain");
+      sentenceContainer.textContent += " / " + word;
+    });
+
+    // Calificar el orden de la oración
+    calificarButton.addEventListener("click", function() {
+      var orderedWords = sentenceContainer.textContent.split(" / ");
+      if (arraysEqual(orderedWords, words)) {
+        alert("¡El orden es correcto!");
+      } else {
+        alert("El orden es incorrecto. Inténtalo nuevamente.");
+      }
+    });
+
+    // Guardar el estado inicial
+    initialState = sentenceContainer.textContent;
+
+    // Resetear la oración y los botones al estado inicial
+    resetButton.addEventListener("click", function() {
+      sentenceContainer.textContent = initialState;
+      buttonsContainer.innerHTML = "";
+      shuffledWords.forEach(function(word) {
+        var button = document.createElement("button");
+        button.className = "word-button";
+        button.textContent = word;
+        button.draggable = true;
+        button.addEventListener("dragstart", function(event) {
+          event.dataTransfer.setData("text/plain", word);
+          button.classList.add("dragged");
+        });
+        button.addEventListener("dragend", function(event) {
+          button.classList.remove("dragged");
+        });
+        buttonsContainer.appendChild(button);
+      });
+    });
+
+    // Función para mezclar un array
+    function shuffleArray(array) {
+      var currentIndex = array.length, randomIndex, temp;
+      while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        temp = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temp;
+      }
+      return array;
+    }
+
+    // Función para comparar dos arrays
+    function arraysEqual(arr1, arr2) {
+      if (arr1.length !== arr2.length) return false;
+      for (var i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) return false;
+      }
+      return true;
+    }
   </script>
 
 </body>
