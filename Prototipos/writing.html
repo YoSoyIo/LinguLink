@@ -4,88 +4,88 @@
   <meta charset="UTF-8">
   <title>Writing</title>
   <style>
-    body {
-      background-color: #f7f4fd;
-      font-family: Arial, sans-serif;
-    }
+  body {
+    background-color: #f4fdfa;
+    font-family: Arial, sans-serif;
+  }
 
-    h1 {
-      color: #663399;
-    }
+  h1 {
+    color: #0b8b0bcf;
+  }
 
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      justify-content: space-around;
-      display: flex;
-      flex-direction: column;
-      align-content: stretch;
-      flex-wrap: nowrap;
-    }
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    flex-wrap: nowrap;
+  }
 
-    p {
-      color: #333333;
-      line-height: 1.5;
-    }
+  p {
+    color: #333333;
+    line-height: 1.5;
+  }
 
-    label {
-      color: #663399;
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-    }
+  label {
+    color: #0b8b0bcf;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
 
-    textarea {
-      resize: none;
-      width: 95%;
-      padding: 10px;
-      border: 1px solid #663399;
-      border-radius: 5px;
-      font-size: 14px;
-      color: #333333;
-      height: 200px;
-    }
+  textarea {
+    resize: none;
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #0b8b0bcf;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333333;
+    height: 200px;
+  }
 
-    p{
-      text-align: justify;
-    }
+  p{
+    text-align: justify;
+  }
 
-    input[type="button"] {
-      background-color: #663399;
-      color: #ffffff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 5px;
-    }
+  input[type="button"] {
+    background-color: #0b8b0bcf;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
 
-    input[type="button"]:hover {
-      background-color: #5a2f87;
-    }
+  input[type="button"]:hover {
+    background-color: #004b00;
+  }
 
-    .message {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #ffffff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  .message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 50vw;
+    height: 30vh;
+  }
+
+  .message p{
       text-align: center;
-      width: 50vw;
-      height: 30vh;
-    }
-
-    .message p{
-        text-align: center;
-    }
+  }
   </style>
 </head>
 <body>
@@ -100,7 +100,7 @@
       <strong>Instrucciones:</strong> Escribe un párrafo de al menos 200 palabras donde describas tu lugar favorito para relajarte. Puedes elegir cualquier lugar, ya sea real o imaginario. Detalla cómo es el lugar, qué te gusta de él y por qué te resulta relajante. Utiliza lenguaje descriptivo y trata de transmitir tus emociones y sensaciones mientras estás en ese lugar.
     </p>
     <label for="respuesta1">Answer:</label>
-    <textarea name="respuesta1" id="respuesta1" rows="4" readonly></textarea>
+    <textarea name="respuesta1" id="respuesta1" rows="4"></textarea>
 
     <input type="button" value="Enviar" onclick="mostrarMensaje();">
   </form>

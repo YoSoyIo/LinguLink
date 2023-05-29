@@ -6,26 +6,26 @@
 
       for (var i = 0; i < inputs.length; i++) {
         if (inputs[i].value.toLowerCase() === correctAnswers[i]) {
-          inputs[i].style.backgroundColor = 'green';
+          inputs[i].style.backgroundColor = '#c9fdd8';
           correctCount++;
         } else if (inputs[i].value === '') {
           inputs[i].style.backgroundColor = 'yellow';
         } else {
-          inputs[i].style.backgroundColor = 'red';
+          inputs[i].style.backgroundColor = '#fdd8d8';
         }
       }
-	  
+
 	var resultContainer = document.getElementById('result-container');
     resultContainer.style.display = 'block';
 
 
     var calificacion = (correctCount / totalInputs) * 100;
 
-    var resultText = 'Correct answers: ' + correctCount + '/' + totalInputs + '<br>Score: ' + calificacion + '%';
-	
+    var resultText = '<h2>Correct answers: ' + correctCount + '/' + totalInputs + '<h2><br>Score: ' + calificacion + '%';
+
     resultContainer.innerHTML = resultText;
     }
-	
+
 	function revisarRespuestas() {
       var preguntas = document.getElementsByClassName("question");
       var totalPreguntas = preguntas.length;
@@ -48,15 +48,14 @@
 
         if (respuestaCorrecta) {
           respuestasCorrectas++;
-          pregunta.style.backgroundColor = "green";
+          pregunta.style.backgroundColor = "#c9fdd8";
         } else {
-          pregunta.style.backgroundColor = "red";
+          pregunta.style.backgroundColor = "#fdd8d8";
         }
       }
 
       var calificacion = (respuestasCorrectas / totalPreguntas) * 100;
       var resultadoDiv = document.getElementById("result");
-      resultadoDiv.innerHTML = "Respuestas correctas: " + respuestasCorrectas + "/" + totalPreguntas + "<br>Calificación: " + calificacion + "%";
+      resultadoDiv.innerHTML = "<h2>Respuestas correctas: " + respuestasCorrectas + "/" + totalPreguntas + "<h2><br>Calificación: " + calificacion + "%";
       resultadoDiv.style.display = "block";
     }
-	

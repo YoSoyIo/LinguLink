@@ -3,77 +3,168 @@
 <head>
   <title>Actividad de Wordformation</title>
   <style>
-    .bold {
+  body {
+      background-color: #f2f7fb;
+      font-family: Arial, sans-serif;
+      color: #333333;
+    }
+
+    h1 {
+      color: #337ab7;
+    }
+
+    h2 {
+      color: #337ab7;
+    }
+
+    .instruct {
+      background-color: #eaf2f7;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    ol {
+      margin-left: 20px;
+      width: 70%;
+      text-align: justify;
+    }
+
+    form {
+      max-width: 50vw;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      color: #337ab7;
       font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      margin-top: 15px;
     }
-    .empty {
-      background-color: yellow;
+
+    input[type="text"] {
+      width: 25%;
+      padding: 5px;
+      border: 1px solid #337ab7;
+      border-radius: 5px;
+      font-size: 14px;
+      color: #333333;
     }
-    .result-container {
-      display: none;
+
+    #calificar-button {
+      background-color: #337ab7;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #calificar-button[disabled] {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+
+    #calificar-button:hover {
+      background-color: #265a8d;
+    }
+
+    .correct {
+      background-color: #c8e6c9;
+    }
+
+    .incorrect {
+      background-color: #ffcdd2;
+    }
+
+    .message {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      border-radius: 10px;
       padding: 20px;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       text-align: center;
+      width: 50vw;
+      height: 30vh;
+    }
+
+    .message p {
+      text-align: center;
+    }
+
+    .conte {
+        width: 50%;
+        padding: 2% 5% 0 5%;
+        margin: 0px 15%;
+        background: #fff;
     }
   </style>
 </head>
 <body>
   <h1>Wordformation activity</h1>
-  <h2>Give the correct form of the word in brakets:</h2>
 
-  <p>
-    That little girl can dance <input type="text" id="input1"> (<span class="bold">beauty</span>).
-  </p>
+  <div class="conte">
+      <h2>Give the correct form of the word in brakets:</h2>
 
-  <p>
-    Most modern buildings has underground <input type="text" id="input2"> lots (<span class="bold">park</span>).
-  </p>
+      <p>
+        That little girl can dance <input type="text" id="input1"> (<span class="bold">beauty</span>).
+      </p>
 
-  <p>
-    They have a good <input type="text" id="input3"> of stamps (<span class="bold">collect</span>).
-  </p>
+      <p>
+        Most modern buildings has underground <input type="text" id="input2"> lots (<span class="bold">park</span>).
+      </p>
 
-  <p>
-    We like their <input type="text" id="input4"> (<span class="bold">friendly</span>).
-  </p>
+      <p>
+        They have a good <input type="text" id="input3"> of stamps (<span class="bold">collect</span>).
+      </p>
 
-  <p>
-    It's totally <input type="text" id="input5"> that you stay at home when you were sick (<span class="bold">understand</span>)?
-  </p>
+      <p>
+        We like their <input type="text" id="input4"> (<span class="bold">friendly</span>).
+      </p>
 
-  <p>
-    The weatherman said there is a strong <input type="text" id="input6"> of rain today (<span class="bold">possible</span>).
-  </p>
+      <p>
+        It's totally <input type="text" id="input5"> that you stay at home when you were sick (<span class="bold">understand</span>)?
+      </p>
 
-  <p>
-    I was surpried at his <input type="text" id="input7"> to give up (<span class="bold">refuse</span>).
-  </p>
+      <p>
+        The weatherman said there is a strong <input type="text" id="input6"> of rain today (<span class="bold">possible</span>).
+      </p>
 
-  <p>
-    Have they put the Christmas<input type="text" id="input8"> yet? (<span class="bold">decorate</span>).
-  </p>
+      <p>
+        I was surpried at his <input type="text" id="input7"> to give up (<span class="bold">refuse</span>).
+      </p>
 
-  <p>
-    My cousin used to be rather sully but he's more <input type="text" id="input9"> these days. (<span class="bold">sense</span>)
-  </p>
+      <p>
+        Have they put the Christmas<input type="text" id="input8"> yet? (<span class="bold">decorate</span>).
+      </p>
 
-  <p>
-    Since her <input type="text" id="input10"> the room has been full of laughter. (<span class="bold">arrive</span>).
-  </p>
+      <p>
+        My cousin used to be rather sully but he's more <input type="text" id="input9"> these days. (<span class="bold">sense</span>)
+      </p>
 
-  <p>
-    <button onclick="checkAnswers()">Check answers</button>
-  </p>
+      <p>
+        Since her <input type="text" id="input10"> the room has been full of laughter. (<span class="bold">arrive</span>).
+      </p>
 
-  <div id="result-container" class="result-container" style="display: none;"></div>
-  
+      <p>
+        <button onclick="checkAnswers()" id="calificar-button">Check answers</button>
+      </p>
+  </div>
+
+  <div id="result-container" class="message" style="display: none;"></div>
+
   <script type="text/javascript" src="JS/scripts3.js"></script>
-  
+
 </body>
 </html>
