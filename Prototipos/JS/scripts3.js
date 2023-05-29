@@ -20,7 +20,7 @@
 
     var calificacion = (correctCount / totalInputs) * 100;
 
-    var resultText = 'Respuestas correctas: ' + correctCount + '/' + totalInputs + '<br>Calificación: ' + calificacion + '%';
+    var resultText = 'Correct answers: ' + correctCount + '/' + totalInputs + '<br>Score: ' + calificacion + '%';
 	
     resultContainer.innerHTML = resultText;
     }
