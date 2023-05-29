@@ -14,7 +14,7 @@
     }
 
     form {
-        max-width: 600px;
+      max-width: 600px;
       margin: 0 auto;
       padding: 20px;
       background-color: #ffffff;
@@ -40,20 +40,21 @@
     }
 
     textarea {
-      resize: vertical;
+      resize: none;
       width: 95%;
       padding: 10px;
       border: 1px solid #663399;
       border-radius: 5px;
       font-size: 14px;
       color: #333333;
+      height: 200px;
     }
 
     p{
-        text-align: justify;
+      text-align: justify;
     }
 
-    input[type="submit"] {
+    input[type="button"] {
       background-color: #663399;
       color: #ffffff;
       padding: 10px 20px;
@@ -64,8 +65,26 @@
       margin-top: 5px;
     }
 
-    input[type="submit"]:hover {
+    input[type="button"]:hover {
       background-color: #5a2f87;
+    }
+
+    .message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 50vw;
+      height: 30vh;
+    }
+
+    .message p{
+        text-align: center;
     }
   </style>
 </head>
@@ -73,16 +92,31 @@
 
   <h1>Writing</h1>
 
-  <form>
+  <form id="contenido-main">
     <h2>
-        <b>Instrucciones</b>
+      <b>Tema: </b>Describe tu lugar favorito para relajarte
     </h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <label for="respuesta1">Ingresa tu respuesta:</label>
-    <textarea name="respuesta1" id="respuesta1" rows="4"></textarea>
+    <p>
+      <strong>Instrucciones:</strong> Escribe un párrafo de al menos 200 palabras donde describas tu lugar favorito para relajarte. Puedes elegir cualquier lugar, ya sea real o imaginario. Detalla cómo es el lugar, qué te gusta de él y por qué te resulta relajante. Utiliza lenguaje descriptivo y trata de transmitir tus emociones y sensaciones mientras estás en ese lugar.
+    </p>
+    <label for="respuesta1">Answer:</label>
+    <textarea name="respuesta1" id="respuesta1" rows="4" readonly></textarea>
 
-    <input type="submit" value="Enviar">
+    <input type="button" value="Enviar" onclick="mostrarMensaje();">
   </form>
 
+  <div id="mensajeEnviado" class="message" style="display: none;">
+    <h2>Actividad enviada</h2>
+    <p>La actividad se ha mandado a revisión correctamente</p>
+  </div>
+
 </body>
+<script type="text/javascript">
+  function mostrarMensaje() {
+    var mensaje = document.getElementById("mensajeEnviado");
+    let con = document.getElementById("contenido-main");
+    mensaje.style.display = "block";
+    con.style.display="none";
+  }
+</script>
 </html>
