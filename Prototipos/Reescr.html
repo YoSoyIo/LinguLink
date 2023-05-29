@@ -2,24 +2,24 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Sentence transformation exercises</title>
+  <title>Key Word Transformation</title>
   <style>
-    body {
-      background-color: #f2f7fb;
+  body {
+      background-color: #fef9ff;
       font-family: Arial, sans-serif;
       color: #333333;
     }
 
     h1 {
-      color: #337ab7;
+      color: #800080;
     }
 
     h2 {
-      color: #337ab7;
+      color: #800080;
     }
 
     .instruct {
-      background-color: #eaf2f7;
+      background-color: #f7ebff;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 5px;
@@ -28,20 +28,21 @@
     ol {
       margin-left: 20px;
       width: 70%;
-        text-align: justify;
+      text-align: justify;
     }
 
     form {
-      max-width: 600px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 20px;
       background-color: #ffffff;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center; /* Centrar el contenido del formulario */
     }
 
     label {
-      color: #337ab7;
+      color: #800080;
       font-weight: bold;
       display: block;
       margin-bottom: 5px;
@@ -49,16 +50,15 @@
     }
 
     input[type="text"] {
-      width: 95%;
-      padding: 10px;
-      border: 1px solid #337ab7;
+      padding: 3px;
+      border: 1px solid #800080;
       border-radius: 5px;
       font-size: 14px;
       color: #333333;
     }
 
     #calificar-button {
-      background-color: #337ab7;
+      background-color: #800080;
       color: #ffffff;
       padding: 10px 20px;
       border: none;
@@ -68,74 +68,104 @@
     }
 
     #calificar-button:hover {
-      background-color: #265a8d;
+      background-color: #800080;
     }
+
+    .message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 50vw;
+      height: 30vh;
+    }
+
+    .message p {
+      text-align: center;
+    }
+
   </style>
 </head>
 <body>
 
-  <h1>sentence transformation exercises</h1>
+  <h1>Key Word Transformation</h1>
   <div class="instruct">
-      <h2>Instructions: </h2>
-      <ol>
-        <li>Read the original sentence carefully and understand its meaning. Pay attention to the grammatical structure and key words.</li>
-        <li>Identify the given word or structure and think about how you can use it in the sentence appropriately.</li>
-        <li>Consider the meaning of the original sentence and how it can change or remain the same with the new word or structure provided.</li>
-        <li>Ensure you use correct grammar and punctuation when rewriting the sentence. Make sure the transformed sentence is grammatically correct and coherent.</li>
-        <li>Read the transformed sentence aloud to ensure it makes sense and maintains the original meaning.</li>
-        <li>Check your answer by comparing the transformed sentence with the original sentence. Make sure the transformed sentence meets the given requirements and has a similar meaning to the original.</li>
-      </ol>
+    <h2>Instructions: </h2>
+    <ol>
+      <li>Read the original sentence carefully and understand its meaning. Pay attention to the grammatical structure and key words.</li>
+      <li>Identify the given word or structure and think about how you can use it in the sentence appropriately.</li>
+      <li>Consider the meaning of the original sentence and how it can change or remain the same with the new word or structure provided.</li>
+      <li>Ensure you use correct grammar and punctuation when rewriting the sentence. Make sure the transformed sentence is grammatically correct and coherent.</li>
+      <li>Read the transformed sentence aloud to ensure it makes sense and maintains the original meaning.</li>
+      <li>Check your answer by comparing the transformed sentence with the original sentence. Make sure the transformed sentence meets the given requirements and has a similar meaning to the original.</li>
+    </ol>
   </div>
   <form id="quiz-form">
-    <div>
-      <label for="q1">Pregunta 1:</label>
-      <input type="text" id="q1" name="q1">
-    </div>
-    <div>
-      <label for="q2">Pregunta 2:</label>
-      <input type="text" id="q2" name="q2">
-    </div>
-    <div>
-      <label for="q3">Pregunta 3:</label>
-      <input type="text" id="q3" name="q3">
-    </div>
-    <div>
-      <label for="q4">Pregunta 4:</label>
-      <input type="text" id="q4" name="q4">
-    </div>
-    <div>
-      <label for="q5">Pregunta 5:</label>
-      <input type="text" id="q5" name="q5">
-    </div>
-    <div>
-      <label for="q6">Pregunta 6:</label>
-      <input type="text" id="q6" name="q6">
-    </div>
-    <div>
-      <label for="q7">Pregunta 7:</label>
-      <input type="text" id="q7" name="q7">
-    </div>
-    <div>
-      <label for="q8">Pregunta 8:</label>
-      <input type="text" id="q8" name="q8">
-    </div>
-    <div>
-      <label for="q9">Pregunta 9:</label>
-      <input type="text" id="q9" name="q9">
-    </div>
-    <div>
-      <label for="q10">Pregunta 10:</label>
-      <input type="text" id="q10" name="q10">
-    </div>
+    <ol>
+      <li>
+        <label for="q1">I cannot type very well. <b>(AT)</b></label>
+        I am <input type="text" id="q1" name="q1">.
+      </li>
+      <li>
+        <label for="q2">She says she may join the debating society. <b>(INTERESTED)</b></label>
+        She says she's <input type="text" id="q2" name="q2"> the debating society.
+      </li>
+      <li>
+        <label for="q3">I think that I might make mistakes. <b>(AFRAID)</b></label>
+        I <input type="text" id="q3" name="q3"> mistakes.
+      </li>
+      <li>
+        <label for="q4">He left but he did not say goodbye. <b>(WITHOUT)</b></label>
+        He left <input type="text" id="q4" name="q4"> goodbye.
+      </li>
+      <li>
+        <label for="q5">My mom doesn't want to work in an office any more. <b>(TIRED)</b></label>
+        My mom <input type="text" id="q5" name="q5"> in an office.
+      </li>
+      <li>
+        <label for="q6">Switch off the lights, then you can leave. <b>(BEFORE)</b></label>
+        Switch off the lights <input type="text" id="q6" name="q6">.
+      </li>
+      <li>
+        <label for="q7">He is one of the people who runs the youth club. <b>(INVOLVED)</b></label>
+        He is <input type="text" id="q7" name="q7"> the youth club.
+      </li>
+      <li>
+        <label for="q8">She went on her own and did not wait for the others. <b>(INSTEAD)</b></label>
+        She went on her own <input type="text" id="q8" name="q8"> for the others.
+      </li>
+      <li>
+        <label for="q9">He does not always remember people's names. <b>(BAD)</b></label>
+        He <input type="text" id="q9" name="q9"> people's names.
+      </li>
+      <li>
+        <label for="q10">You can only improve if you work harder. <b>(BY)</b></label>
+        You can only improve <input type="text" id="q10" name="q10"> harder.
+      </li>
+    </ol>
     <button type="button" id="calificar-button">Calificar</button>
   </form>
-  <script type="text/javascript">
 
-  </script>
+  <div id="mensajeEnviado" class="message" style="display: none;">
+    <h2>Your activity has been successfully graded</h2>
+    <p id="mensaje"></p>
+  </div>
   <script>
     var calificarButton = document.getElementById("calificar-button");
+    var inputs = document.querySelectorAll("input[type='text']");
 
     calificarButton.addEventListener("click", function() {
+      // Deshabilitar el botón y los campos de texto
+      calificarButton.disabled = true;
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].disabled = true;
+      }
+
       var answers = {
         q1: document.getElementById("q1").value,
         q2: document.getElementById("q2").value,
@@ -152,49 +182,81 @@
       var score = 0;
 
       // Comparar respuestas con las respuestas correctas
-      if (answers.q1.toLowerCase() === "respuesta1") {
+      if (answers.q1.toUpperCase() === "NOT GOOD AT TYPING") {
         score++;
+        document.getElementById("q1").style.backgroundColor = "#c9fdd8";
+      } else {
+        document.getElementById("q1").style.backgroundColor = "#fdd8d8";
       }
 
-      if (answers.q2.toLowerCase() === "respuesta2") {
+      if (answers.q2.toUpperCase() === "INTERESTED IN JOINING") {
         score++;
+        document.getElementById("q2").style.backgroundColor = "#c9fdd8";
+      } else {
+        document.getElementById("q2").style.backgroundColor = "#fdd8d8";
       }
 
-      if (answers.q3.toLowerCase() === "respuesta3") {
+      if (answers.q3.toUpperCase() === "AFRAID OF MAKING") {
         score++;
+        document.getElementById("q3").style.backgroundColor = "#c9fdd8";
+      } else {
+        document.getElementById("q3").style.backgroundColor = "#fdd8d8";
       }
 
-      if (answers.q4.toLowerCase() === "respuesta4") {
+      if (answers.q4.toUpperCase() === "WITHOUT SAYING") {
         score++;
+        document.getElementById("q4").style.backgroundColor = "#c9fdd8";
+      } else {
+        document.getElementById("q4").style.backgroundColor = "#fdd8d8";
       }
 
-      if (answers.q5.toLowerCase() === "respuesta5") {
+      if (answers.q5.toUpperCase() === "TIRED OF WORKING") {
         score++;
+        document.getElementById("q5").style.backgroundColor = "#c9fdd8";
+      } else {
+        document.getElementById("q5").style.backgroundColor = "#fdd8d8";
       }
 
-      if (answers.q6.toLowerCase() === "respuesta6") {
+      if (answers.q6.toUpperCase() === "BEFORE YOU LEAVE") {
         score++;
+        document.getElementById("q6").style.backgroundColor = "#c9fdd8";
+      } else {
+        document.getElementById("q6").style.backgroundColor = "#fdd8d8";
       }
 
-      if (answers.q7.toLowerCase() === "respuesta7") {
+      if (answers.q7.toUpperCase() === "INVOLVED IN RUNNING") {
         score++;
+        document.getElementById("q7").style.backgroundColor = "#c9fdd8";
+      } else {
+        document.getElementById("q7").style.backgroundColor = "#fdd8d8";
       }
 
-      if (answers.q8.toLowerCase() === "respuesta8") {
+      if (answers.q8.toUpperCase() === "INSTEAD OF WAITING") {
         score++;
+        document.getElementById("q8").style.backgroundColor = "#c9fdd8";
+      } else {
+        document.getElementById("q8").style.backgroundColor = "#fdd8d8";
       }
 
-      if (answers.q9.toLowerCase() === "respuesta9") {
+      if (answers.q9.toUpperCase() === "BAD AT REMEMBERING") {
         score++;
+        document.getElementById("q9").style.backgroundColor = "#c9fdd8";
+      } else {
+        document.getElementById("q9").style.backgroundColor = "#fdd8d8";
       }
 
-      if (answers.q10.toLowerCase() === "respuesta10") {
+      if (answers.q10.toUpperCase() === "BY WORKING HARDER") {
         score++;
+        document.getElementById("q10").style.backgroundColor = "#c9fdd8";
+      } else {
+        document.getElementById("q10").style.backgroundColor = "#fdd8d8";
       }
 
-      alert("Tu puntuación es: " + score + " de 10");
+      // Mostrar mensaje con la puntuación
+      var mensaje = document.getElementById("mensaje");
+      mensaje.innerHTML = "You scored " + score + " out of 10.";
+      document.getElementById("mensajeEnviado").style.display = "block";
     });
   </script>
-
 </body>
 </html>

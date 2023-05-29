@@ -2,57 +2,285 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Ordenar Oración</title>
+  <title>Constructing Sentences</title>
   <style>
-    #sentence-container {
-      margin-bottom: 20px;
+    body {
+      background-color: #f2f7fb;
+      font-family: Arial, sans-serif;
+      color: #333333;
     }
-    .word-button {
-      margin-right: 5px;
+
+    h1 {
+      color: #337ab7;
+    }
+
+    h2 {
+      color: #337ab7;
+    }
+
+    .instruct {
+      background-color: #eaf2f7;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    ol {
+      margin-left: 20px;
+      width: 70%;
+      text-align: justify;
+    }
+
+    form {
+      max-width: 50vw;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      color: #337ab7;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      margin-top: 15px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #337ab7;
+      border-radius: 5px;
+      font-size: 14px;
+      color: #333333;
+    }
+
+    #calificar-button {
+      background-color: #337ab7;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #calificar-button[disabled] {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+
+    #calificar-button:hover {
+      background-color: #265a8d;
+    }
+
+    .correct {
+      background-color: #c8e6c9;
+    }
+
+    .incorrect {
+      background-color: #ffcdd2;
+    }
+
+    .message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 50vw;
+      height: 30vh;
+    }
+
+    .message p {
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <h1>Ordenar Oración</h1>
-
-  <div id="sentence-container">
-    <p>Oración: <span id="sentence"></span></p>
+  <h1>Constructing Sentences</h1>
+  <div class="instruct">
+      <h2>Instructions: </h2>
+      <ol>
+          <li>Read the given words carefully.</li>
+          <li>Identify the subject (who or what the sentence is about) and the verb (the action or state of being).</li>
+          <li>Determine the proper order of the words to form a grammatically correct sentence.</li>
+          <li>Pay attention to punctuation marks such as periods, question marks, and exclamation marks.</li>
+          <li>Use capital letters at the beginning of a sentence and for proper nouns.</li>
+          <li>Check the word order and make sure it follows the rules of English grammar.</li>
+          <li>Review the sentence for clarity and coherence.</li>
+          <li>Once you are satisfied with the sentence, type it out.</li>
+          <li>Check your score.</li>
+      </ol>
   </div>
+  <form id="quiz-form">
+    <ol>
+      <li>
+        <label for="q1">lives / she / New York / in</label>
+        <input type="text" id="q1" name="q1">
+      </li>
+      <li>
+        <label for="q2">don't / like / I / ice cream</label>
+        <input type="text" id="q2" name="q2">
+      </li>
+      <li>
+        <label for="q3">a / they / dog / got / have</label>
+        <input type="text" id="q3" name="q3">
+      </li>
+      <li>
+        <label for="q4">not / is / tired / he</label>
+        <input type="text" id="q4" name="q4">
+      </li>
+      <li>
+        <label for="q5">we / Spain / don't / live / in</label>
+        <input type="text" id="q5" name="q5">
+      </li>
+      <li>
+        <label for="q6">got / car / has / he / a / ?</label>
+        <input type="text" id="q6" name="q6">
+      </li>
+      <li>
+        <label for="q7">are / happy / ? / they</label>
+        <input type="text" id="q7" name="q7">
+      </li>
+      <li>
+        <label for="q8">does / like / he / ? / dogs</label>
+        <input type="text" id="q8" name="q8">
+      </li>
+      <li>
+        <label for="q9">go / Carol / doesn't / the / cinema / to</label>
+        <input type="text" id="q9" name="q9">
+      </li>
+      <li>
+        <label for="q10">they / near / hospital / live / do / the / ?</label>
+        <input type="text" id="q10" name="q10">
+      </li>
+    </ol>
+    <button type="button" id="calificar-button">Calificar</button>
+  </form>
 
-  <div id="buttons-container">
-    <button class="word-button">Palabra 1</button>
-    <button class="word-button">Palabra 2</button>
-    <button class="word-button">Palabra 3</button>
-    <button class="word-button">Palabra 4</button>
-    <button class="word-button">Palabra 5</button>
-    <button class="word-button">Palabra 6</button>
+  <div id="mensajeEnviado" class="message" style="display: none;">
+    <h2>Your activity has been successfully graded</h2>
+    <p id="mensaje"></p>
   </div>
 
   <script>
-    // Array de palabras de la oración original
-    var words = ["Esta", "es", "una", "oración", "desordenada"];
+    var calificarButton = document.getElementById("calificar-button");
+    var inputElements = document.getElementsByTagName("input");
 
-    // Obtener elementos del DOM
-    var sentenceContainer = document.getElementById("sentence");
-    var buttonsContainer = document.getElementById("buttons-container");
+    calificarButton.addEventListener("click", function() {
+      // Bloquear botón y campos de texto
+      calificarButton.disabled = true;
+      for (var i = 0; i < inputElements.length; i++) {
+        inputElements[i].disabled = true;
+      }
 
-    // Mostrar la oración original
-    sentenceContainer.textContent = words.join(" ");
+      var answers = {
+        q1: document.getElementById("q1").value,
+        q2: document.getElementById("q2").value,
+        q3: document.getElementById("q3").value,
+        q4: document.getElementById("q4").value,
+        q5: document.getElementById("q5").value,
+        q6: document.getElementById("q6").value,
+        q7: document.getElementById("q7").value,
+        q8: document.getElementById("q8").value,
+        q9: document.getElementById("q9").value,
+        q10: document.getElementById("q10").value
+      };
 
-    // Crear botones para cada palabra
-    words.forEach(function(word) {
-      var button = document.createElement("button");
-      button.className = "word-button";
-      button.textContent = word;
-      button.addEventListener("click", function() {
-        // Agregar la palabra al final de la oración
-        sentenceContainer.textContent += " " + word;
-        // Ocultar el botón
-        button.style.display = "none";
-      });
-      buttonsContainer.appendChild(button);
+      var score = 0;
+
+      // Comparar respuestas con las respuestas correctas
+      if (answers.q1.toUpperCase() === "She lives in New York".toUpperCase()) {
+        score++;
+        // Cambiar color de fondo del campo de texto a verde
+        document.getElementById("q1").style.backgroundColor = "#d4f0da";
+      } else {
+        // Cambiar color de fondo del campo de texto a rojo
+        document.getElementById("q1").style.backgroundColor = "#f8d7da";
+      }
+
+      if (answers.q2.toUpperCase() === "I don't like ice cream".toUpperCase()) {
+        score++;
+        document.getElementById("q2").style.backgroundColor = "#d4f0da";
+      } else {
+        document.getElementById("q2").style.backgroundColor = "#f8d7da";
+      }
+
+      if (answers.q3.toUpperCase() === "They have got a dog".toUpperCase()) {
+        score++;
+        document.getElementById("q3").style.backgroundColor = "#d4f0da";
+      } else {
+        document.getElementById("q3").style.backgroundColor = "#f8d7da";
+      }
+
+      if (answers.q4.toUpperCase() === "He is not tired".toUpperCase()) {
+        score++;
+        document.getElementById("q4").style.backgroundColor = "#d4f0da";
+      } else {
+        document.getElementById("q4").style.backgroundColor = "#f8d7da";
+      }
+
+      if (answers.q5.toUpperCase() === "We don't live in Spain".toUpperCase()) {
+        score++;
+        document.getElementById("q5").style.backgroundColor = "#d4f0da";
+      } else {
+        document.getElementById("q5").style.backgroundColor = "#f8d7da";
+      }
+
+      if (answers.q6.toUpperCase() === "Has he got a car?".toUpperCase()) {
+        score++;
+        document.getElementById("q6").style.backgroundColor = "#d4f0da";
+      } else {
+        document.getElementById("q6").style.backgroundColor = "#f8d7da";
+      }
+
+      if (answers.q7.toUpperCase() === "Are they happy?".toUpperCase()) {
+        score++;
+        document.getElementById("q7").style.backgroundColor = "#d4f0da";
+      } else {
+        document.getElementById("q7").style.backgroundColor = "#f8d7da";
+      }
+
+      if (answers.q8.toUpperCase() === "Does he like dogs?".toUpperCase()) {
+        score++;
+        document.getElementById("q8").style.backgroundColor = "#d4f0da";
+      } else {
+        document.getElementById("q8").style.backgroundColor = "#f8d7da";
+      }
+
+      if (answers.q9.toUpperCase() === "Carol doesn't go to the cinema".toUpperCase()) {
+        score++;
+        document.getElementById("q9").style.backgroundColor = "#d4f0da";
+      } else {
+        document.getElementById("q9").style.backgroundColor = "#f8d7da";
+      }
+
+      if (answers.q10.toUpperCase() === "Do they live near the hospital?".toUpperCase()) {
+        score++;
+        document.getElementById("q10").style.backgroundColor = "#d4f0da";
+      } else {
+        document.getElementById("q10").style.backgroundColor = "#f8d7da";
+      }
+
+      mostrarMensaje("Your score is: " + score);
     });
+
+    function mostrarMensaje(texto) {
+      var mensaje = document.getElementById("mensajeEnviado");
+      let parrafo = document.getElementById("mensaje");
+      mensaje.style.display = "block";
+      parrafo.innerHTML = texto;
+    }
   </script>
 
 </body>

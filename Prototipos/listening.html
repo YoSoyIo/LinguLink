@@ -1,39 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    .container {
-      display: flex;
-    }
-    .box {
-      width: 50%;
-      padding: 20px;
-    }
-    #questions {
-      list-style-type: none;
-    }
-    .question {
-      margin-bottom: 10px;
-    }
-    #result {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      text-align: center;
-    }
-  </style>
+    <style>
+      .container {
+        display: flex;
+      }
+      audio {
+            position: fixed;
+            top: 16%;
+        }
+      #questions {
+        list-style-type: none;
+      }
+      .question {
+        margin-bottom: 10px;
+      }
+      #result {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      body {
+          background-color: #f7ebff;
+          font-family: Arial, sans-serif;
+          color: #333333;
+          margin: 0;
+      }
+
+      h2 {
+        color: #800080;
+      }
+
+      .box {
+          background: #ffffff;
+          margin: 3%;
+          width: 50%;
+          padding: 20px;
+      }
+
+      #questions {
+          margin-left: 2%;
+          width: 90%;
+          text-align: justify;
+          padding: 0;
+      }
+
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+
+      label {
+        color: #800080;
+      }
+
+      button {
+        background-color: #800080;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 0 40%;
+      }
+
+      #result {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+      }
+    </style>
 </head>
 <body>
   <div class="container">
     <div class="box">
       <!-- Recuadro izquierdo con las Questions -->
-	  
+
       <h2>Listen to the conversation about the human body and select the correct answers.</h2>
       <ul id="questions">
         <li class="question">
@@ -50,7 +99,7 @@
           <input type="radio" id="q2-option3" name="q2" value="incorrecta"> <label for="q2-option3">virus</label><br>
           <input type="radio" id="q2-option4" name="q2" value="incorrecta"> <label for="q2-option4">nutrients</label><br>
         </li>
-		
+
         <li class="question">
           <p>Question 3:  You would be much too small to...</p>
           <input type="radio" id="q3-option1" name="q3" value="incorrecta"> <label for="q3-option1">watch</label><br>
@@ -79,7 +128,7 @@
           <input type="radio" id="q6-option3" name="q6" value="correcta"> <label for="q6-option3">eyelashes and eyebrows</label><br>
           <input type="radio" id="q6-option4" name="q6" value="incorrecta"> <label for="q6-option4">moustache and eyebrows</label><br>
         </li>
-        
+
 		<li class="question">
           <p>Question 7: What do mites feed on?</p>
           <input type="radio" id="q7-option1" name="q7" value="incorrecta"> <label for="q7-option1">virus</label><br>
