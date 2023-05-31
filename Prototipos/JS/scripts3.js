@@ -1,6 +1,6 @@
     function checkAnswers() {
       var inputs = document.getElementsByTagName('input');
-      var correctAnswers = ["beautifully", "parking", "collection", "friendship", "understandeable", "possibility", "refusal", "decoration", "sensitive", "arrival"];
+      var correctAnswers = ["beautifully", "parking", "collection", "friendship", "understandable", "possibility", "refusal", "decoration", "sensitive", "arrival"];
       var correctCount = 0;
 	  var totalInputs = inputs.length;
 
