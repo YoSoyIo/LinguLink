@@ -152,7 +152,8 @@
             resultContainer.style.display = 'block';
             resultContainer.textContent = 'Your score is ' + score + ' out of ' + numBlanks;
             resultContainer.style.backgroundColor = '#2bade2';
-
+            var a = resultContainer.innerHTML;
+            resultContainer.innerHTML = a+"<a href='https://forms.gle/XwerxZjwQdyXNxyL9'>Encuesta</a>"
             // Deshabilitar el botón "Submit Answers"
             document.getElementById('submit-button').disabled = true;
         }

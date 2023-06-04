@@ -19,6 +19,6 @@ function checkAnswers() {
 
     // Muestra el resultado de la calificación
     var resultElement = document.getElementById('result');
-    resultElement.innerHTML = 'Correct answers: ' + correctCount + '/' + inputBoxes.length;
+    resultElement.innerHTML = 'Correct answers: ' + correctCount + '/' + inputBoxes.length+"<br>Contesta la encuesta: <a href='https://forms.gle/5miAj3xvDodtmTaG7'>Encuesta</a>";
 	resultElement.style.display="block";
   }

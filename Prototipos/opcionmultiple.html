@@ -251,7 +251,8 @@
                 resultContainer.style.display = 'block';
                 resultContainer.textContent = 'Your score is ' + score + ' out of 10';
                 resultContainer.style.backgroundColor = 'blueviolet';
-
+                var a = resultContainer.innerHTML;
+                resultContainer.innerHTML = a+"<a href='https://forms.gle/Aun9cSyRmgz3LkiB9'> Encuesta</a>"
                 // Deshabilitar el botón "Submit Answers"
                 document.getElementById('submit-button').disabled = true;
             });

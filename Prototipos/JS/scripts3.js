@@ -23,10 +23,10 @@
 
     var resultText = '<h2>Correct answers: ' + correctCount + '/' + totalInputs + '<h2><br>Score: ' + calificacion + '%';
 
-    resultContainer.innerHTML = resultText;
+    resultContainer.innerHTML = resultText + "<br><a href='https://forms.gle/zT8GNyERK2tDcdHM7'>Encuesta</a>";
     }
 
-	function revisarRespuestas() {
+	function revisarRespuestas(enlace) {
       var preguntas = document.getElementsByClassName("question");
       var totalPreguntas = preguntas.length;
       var respuestasCorrectas = 0;
@@ -56,6 +56,6 @@
 
       var calificacion = (respuestasCorrectas / totalPreguntas) * 100;
       var resultadoDiv = document.getElementById("result");
-      resultadoDiv.innerHTML = "<h2>Respuestas correctas: " + respuestasCorrectas + "/" + totalPreguntas + "<h2><br>Calificación: " + calificacion + "%";
+      resultadoDiv.innerHTML = "<h2>Respuestas correctas: " + respuestasCorrectas + "/" + totalPreguntas + "<h2><br>Calificación: " + calificacion + "%<br>"+enlace;
       resultadoDiv.style.display = "block";
     }
